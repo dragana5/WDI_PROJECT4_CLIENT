@@ -1,0 +1,26 @@
+<h1>Swim index</h1>
+<!-- requires the library added to index.html -->
+<!-- <div ng-show="main.filterBar" class="search-container" ng-class="{'drop-down': main.filterBar}">
+<input ng-model="vm.q" type="text" name="" value="" ng-change="vm.searchQuery()" class="search-box" placeholder="Search...">
+</div> -->
+<!-- <ul ng-controller= >
+<li>{{swim.title}}</li>
+<li><h2>{{swim.description}}</h2></li>
+<li><h2>{{swim.title}}</h2></li>
+</ul>
+<h4 ng-repeat="swim.title" >{{swim.title}}</h4>
+<p>Name: <input type="text" ng-model="swim.title"></p>
+<p>You wrote: {{ swim.title }}</p> -->
+<div ng-controller="SwimsIndexCtrl as swimsIndex" ng-controller="VenuesIndexCtrl as venuesIndex">
+
+  <ul>
+    <li ng-repeat="swim in swimsIndex.swims" ng-repeat="venue in venuesIndex.venues">
+      <h3>{{ swim.title }}</h3>
+      <h4>{{ swim.description }}.</h4>
+      <h4>This swim will happen at {{ venue.venue_id}} on {{ swim.startDate}}.</h4>
+      <h4>{{ swim.created_by }} created this swim.</h4>
+      <button ng-click="" type="button" name="button">Delete</button>
+    </li>
+
+  </ul>
+</div>
