@@ -1,0 +1,39 @@
+<img src="{{ usersShow.user.image }}">
+<div class="container">
+  <div class="row">
+    <div class="user-image ">
+      <img ng-show="usersShow.user.image" class="user-image" src="{{usersShow.user.image}}" alt="">
+      <img ng-hide="usersShow.user.image" alt="">
+
+    </div>
+  </div>
+  <div class="row username">
+    <h1 class="">{{ usersShow.user.username}}</h1>
+  </div>
+</div>
+
+
+
+
+<div>
+    <h3 ng-if="usersShow.user.swims.length> 0">
+      <span>I created {{usersShow.user.swims.length}} swimming events.</span>
+
+      <ul>
+        <li ng-repeat="users.swim in usersShow.swims.title">
+          <h2 ui-sref="swimsShow({ id: swim.id })">{{ usersShow.swims.title }}</h2>
+          <h4>{{ usersShow.swims.description }}</h4>
+        </li>
+
+
+      </ul>
+
+      <!-- <h3><a ui-sref="swimsShow({id: swim._id})">{{swim.title}}</a></h3>
+      <!-- <h5>{{ story.genre}}</h5>  -->
+      <!-- <h5>This event will be held at {{venue.title}} <span ng-if="usersShow.swims.length=1"></span> -->
+        <!-- <span ng-if="story.contributions.length!=1">events.</span></h5> --> -->
+
+
+
+
+</div>

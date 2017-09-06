@@ -11,16 +11,23 @@
 <h4 ng-repeat="swim.title" >{{swim.title}}</h4>
 <p>Name: <input type="text" ng-model="swim.title"></p>
 <p>You wrote: {{ swim.title }}</p> -->
-<div ng-controller="SwimsIndexCtrl as swimsIndex" ng-controller="VenuesIndexCtrl as venuesIndex">
 
-  <ul>
-    <li ng-repeat="swim in swimsIndex.swims" ng-repeat="venue in venuesIndex.venues">
-      <h3>{{ swim.title }}</h3>
-      <h4>{{ swim.description }}.</h4>
-      <h4>This swim will happen at {{ venue.venue_id}} on {{ swim.startDate}}.</h4>
-      <h4>{{ swim.created_by }} created this swim.</h4>
-      <button ng-click="" type="button" name="button">Delete</button>
-    </li>
+<!-- put the function of vanue controller in SwimsIndexCtrl  -->
 
-  </ul>
-</div>
+<ul>
+  <li ng-repeat="swim in swimsIndex.swims">
+    <h3>{{ swim.title }}</h3>
+    <h4>{{ swim.description }}.</h4>
+
+    <h4>This swim will happen at <a ui-sref="venuesShow({ id: swim.venue.id })">{{ swim.venue.name}}</a> on {{ swim.startDate}}.</h4>
+    <h4>{{ swim.swim_id.created_by }} created this event.</h4>
+    <ul>
+      <li >People attending this swim are: {{ swim.user_ids.name }}</li>
+    </ul>
+    <div class="google-map" center="{ lat: 51.4974568, lng: -0.2133327 }">
+
+    </div>
+
+    <button ng-hide="swim.user_ids.indexOf(main.user.id) !== -1" ng-click="swimsIndex.joinSwim(swim)" type="button" name="button">Join this event</button>
+  </li>
+</ul>

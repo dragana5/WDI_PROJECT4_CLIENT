@@ -23,13 +23,19 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'LoginCtrl',
     controllerAs: 'login'
   })
+  .state('usersShow', {
+    url: '/users/:id',
+    templateUrl: '/js/views/users/show.html',
+    controller: 'UsersShowCtrl',
+    controllerAs: 'usersShow'
+  })
   .state('venuesIndex', {
     url: '/venues',
     templateUrl: '/js/views/venues/index.html',
     controller: 'VenuesIndexCtrl',
     controllerAs: 'venuesIndex'
   })
-  .state('venuesCreate', {
+  .state('venuesNew', {
     url: '/venues/new',
     templateUrl: '/js/views/venues/new.html',
     controller: 'VenuesNewCtrl',
@@ -47,7 +53,7 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     controller: 'SwimsIndexCtrl',
     controllerAs: 'swimsIndex'
   })
-  .state('swimsCreate', {
+  .state('swimsNew', {
     url: '/swims/new',
     templateUrl: '/js/views/swims/new.html',
     controller: 'SwimsNewCtrl',

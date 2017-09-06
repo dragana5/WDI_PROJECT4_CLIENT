@@ -16,4 +16,5 @@ function LoginCtrl(User, CurrentUserService, $state) {
         $state.go('swimsIndex');
       });
   }
+  console.log('LOGINNNNNN');
 }

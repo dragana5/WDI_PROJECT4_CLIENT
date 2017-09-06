@@ -8,12 +8,63 @@
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGHZo_JnjOXj8Y7Ric5MRvwUMhq1_gSw8"
+  type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js" charset="utf-8"></script>
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
   <!-- endinject -->
-
 </head>
+<body ng-controller="MainCtrl as main">
+  <header>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="homepage">SwimPal</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li ng-show="main.user">
+                <p class="navbar-text"></p>
+                  <a ui-sref="usersShow({id: main.user.id})">Welcome, {{ main.user.username }}</a>
+              </li>
+              <li ng-hide="main.user">
+                <a ui-sref="register">Register</a>
+              </li>
+              <li ng-hide="main.user">
+                <a ui-sref="login">Login</a>
+              </li>
+              <li ng-show="main.user">
+                <a ui-sref="swimsIndex">Swims</a>
+              </li>
+              <li ng-show="main.user">
+                <a ui-sref="venuesNew">Add a venue</a>
+              </li>
+              <li ng-show="main.user">
+                <a ui-sref="venuesIndex">Venues</a>
+              </li>
+              <li ng-show="main.user">
+                <a ui-sref="swimsNew">Add a swim</a>
+              </li>
+              <li ng-show="main.user">
+                <a ng-click="main.logout()">Logout</a>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
   <main ui-view></main>
+</body>
+
 </html>

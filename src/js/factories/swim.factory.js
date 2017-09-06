@@ -4,5 +4,7 @@ angular
 
 swimFactory.$inject = ['API', '$resource'];
 function swimFactory(API, $resource){
-  return $resource(`${API}/swims/:id`, { id: '@_id'});
+  return $resource(`${API}/swims/:id`, { id: '@_id'},{
+  'update': {method: 'PUT'}
+});
 }
