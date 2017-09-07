@@ -64,6 +64,12 @@ function Router($stateProvider, $locationProvider, $urlRouterProvider){
     templateUrl: '/js/views/swims/show.html',
     controller: 'SwimsShowCtrl',
     controllerAs: 'swimsShow'
+  })
+  .state('swimsEdit', {
+    url: '/swims/:id/edit',
+    templateUrl: '/js/views/swims/edit.html',
+    controller: 'SwimsEditCtrl',
+    controllerAs: 'swimsEdit'
   });
 
   $urlRouterProvider.otherwise('/');

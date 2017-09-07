@@ -8,7 +8,7 @@ function SwimsNewCtrl(Swim, User, Venue, $state, CurrentUserService){
   const vm      = this;
   vm.addSwim    = addSwim;
   vm.venues     = Venue.query();
-  vm.swim      = { user_ids: [] };
+  vm.swim       = { user_ids: [] };
 
   function addSwim() {
     vm.swim.created_by = CurrentUserService.currentUser.id;

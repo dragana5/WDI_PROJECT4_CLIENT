@@ -13,21 +13,28 @@
 <p>You wrote: {{ swim.title }}</p> -->
 
 <!-- put the function of vanue controller in SwimsIndexCtrl  -->
-
 <ul>
   <li ng-repeat="swim in swimsIndex.swims">
-    <h3>{{ swim.title }}</h3>
+    <h3><a ui-sref="swimsShow({id: swim.id})">{{ swim.title }}</a></h3>
+
     <h4>{{ swim.description }}.</h4>
 
-    <h4>This swim will happen at <a ui-sref="venuesShow({ id: swim.venue.id })">{{ swim.venue.name}}</a> on {{ swim.startDate}}.</h4>
-    <h4>{{ swim.swim_id.created_by }} created this event.</h4>
-    <ul>
-      <li >People attending this swim are: {{ swim.user_ids.name }}</li>
-    </ul>
+    <h4>This swim will happen at <a ui-sref="venuesShow({ id: swim.venue.id })">{{ swim.venue.name}}</a> on {{ swim.startDate | date }} at {{ swim.startDate | date:"hh:mm" }} .</h4>
+
+    <h4>Created by : {{swim.creator.username}}</h4>
+
+    <h4>People attending this swim are:
+      <span ng-repeat="user in swim.users">
+        <span>{{ user.username }} </span>
+      </span>
+    </h4>
+
     <div class="google-map" center="{ lat: 51.4974568, lng: -0.2133327 }">
 
     </div>
 
     <button ng-hide="swim.user_ids.indexOf(main.user.id) !== -1" ng-click="swimsIndex.joinSwim(swim)" type="button" name="button">Join this event</button>
+
+
   </li>
 </ul>

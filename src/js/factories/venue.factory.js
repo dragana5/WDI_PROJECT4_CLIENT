@@ -4,5 +4,7 @@ angular
 
 venueFactory.$inject = ['API', '$resource'];
 function venueFactory(API, $resource){
-  return $resource(`${API}/venues/:id`, { id: '@_id'});
+  return $resource(`${API}/venues/:id`, { id: '@_id'},{
+    update: {method: 'PUT'}
+  });
 }

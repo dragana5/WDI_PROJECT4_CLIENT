@@ -1,6 +1,9 @@
-<ul>
-  <li ui-sref="venuesShow({id: venue.id })" ng-repeat="venue in venuesIndex.venues">
+<div>
+  <div ui-sref="venuesShow({id: venue.id })" ng-repeat="venue in venuesIndex.venues">
     <h3>{{ venue.name }}</h3>
-    <img src="{{ venue.image }}" alt="">
-  </li>
-</ul>
+    <img class="venueImage" src="{{ venue.image }}" alt="">
+    <div ng-repeat="swims in venue.swims">
+      <h3>{{swims.title}}</h3>
+    </div>
+  </div>
+</div>

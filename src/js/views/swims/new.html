@@ -1,7 +1,7 @@
 
-{{ swimsNew.venues }}
+<!-- {{ swimsNew.venues }} -->
 
-<h1>new swim</h1>
+<!-- <h1>new swim</h1>
 <form  ng-submit="swimsNew.addSwim()">
   <label for="title">Title</label>
   <input type="text" id="title" ng-model="swimsNew.swim.title">
@@ -14,4 +14,25 @@
   <select ng-model="swimsNew.swim.venue_id" ng-options="venue.id as venue.name for venue in swimsNew.venues"></select>
   <br />
   <input type="submit">
+</form> -->
+
+
+<form ng-submit="swimsNew.addSwim()">
+  <div class="form-group-new">
+    <input class="form-control" type="text" name="title" ng-model="swimsNew.swim.title" placeholder="title">
+  </div>
+  <div class="form-group-new">
+    <input class="form-control" type="text" name="description" ng-model="swimsNew.swim.description" placeholder="description">
+  </div>
+  <div class="form-group-new">
+    <input class="form-control" type="datetime" name="date" ng-model="swimsNew.swim.startDate" placeholder="date">
+  </div>
+  <div class="form-group-new">
+    <input class="form-control" type="text" name="venue" ng-model="swimsNew.swim.venue_id" placeholder="venue">
+  </div>
+
+
+
+
+  <input class="btn btn-primary" class="submit" type="submit" value="Submit">
 </form>

@@ -1,27 +1,36 @@
 angular
-  .module('project-4-client')
-  .controller('SwimsShowCtrl', SwimsShowCtrl);
+.module('project-4-client')
+.controller('SwimsShowCtrl', SwimsShowCtrl);
 
 SwimsShowCtrl.$inject = ['Swim', '$stateParams', '$state'];
+
 function SwimsShowCtrl(Swim, $stateParams, $state) {
-  const vm = this;
+  const vm       = this;
+  vm.swim        = Swim.get({ id: $stateParams.id });
 
-  vm.swim = Swim.get({ id: $stateParams.id });
 
-  function deleteSwim() {
+  vm.deleteSwim  = deleteSwim;
+  function deleteSwim(){
     Swim
-    .findById(vm.swim.id)
-    .exec()
-    .swim.delete()
-    .exec()
-    .then(() => $state.go('swimsIndex'));
-  }
-  function editSwim() {
-    Swim
-    .findById(vm.swim.id)
-    .exec()
-    .save()({ swim: vm.swim })
+    .delete({ id: vm.swim.id })
     .$promise
-    .then(() => $state.go('swimsShow'));
+    .then(() => {
+      $state.go('swimsIndex');
+    });
   }
 }
+
+
+
+// console.log(story.contributions, '<--------------------- STORY CONTRIBUTIONS');
+// for (var i = 0; i < story.contributions.length; i++) {
+//   story.contributions[i].contributor = req.body.contributions[i].contributor._id;
+// }
+
+// for (var i = 0; i < story.contributions.length; i++) {
+//   console.log(story.contributions[i], 'BEFORE');
+//   story.contributions[i].contributor = story.contributions[i].contributor.id;
+//   console.log(story.contributions[i], 'AFTER');
+// }
+
+// story.contributions = req.body.contributions;

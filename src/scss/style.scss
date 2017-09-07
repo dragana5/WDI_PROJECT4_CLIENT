@@ -1,3 +1,70 @@
+// HOMEPAGE
+
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
 h1 {
   font-size: 40px;
+  text-align: right;
+  padding-right: 250px;
+  padding-top: 30px;
+  padding-bottom: -50px;
+  font-family: 'Khula', sans-serif;
+  // font-family: 'Raleway', sans-serif;
+
+}
+
+header {
+  // visibility: collapse;
+}
+
+a:hover, a:focus { text-decoration: none;}
+
+
+
+//LOGIN
+.form-group {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: none;
+  border-color: none;
+}
+
+.form-group-new {
+  width: 350px;
+  height: 50px;
+  text-align: center;
+  background-color: none;
+  border-color: none;
+  margin: 0 auto;
+}
+
+// .submit {
+//   background-color: white;
+//   text-align: center;
+//
+// }
+
+form input[type=submit] {
+  background-color: white;
+  font-family: 'Khula', sans-serif;
+  color: grey;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 300px;
+}
+
+// Venue image
+.venueImage {
+  width: 500px;
+  height: 300px;
 }

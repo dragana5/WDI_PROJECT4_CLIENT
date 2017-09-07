@@ -5,8 +5,8 @@ angular
 SwimsIndexCtrl.$inject = ['Swim', 'CurrentUserService', '$state'];
 
 function SwimsIndexCtrl(Swim, CurrentUserService, $state){
-  const vm  = this;
-  vm.swims  = Swim.query();
+  const vm    = this;
+  vm.swims    = Swim.query();
   vm.joinSwim = joinSwim;
 
   function joinSwim(swim) {

@@ -1,0 +1,37 @@
+<!-- <h1>Edit swim</h1>
+<form  ng-submit="swimsEdit.update()">
+  <label for="title" value="">Title</label>
+  <input type="text" id="title" ng-model="swimsEdit.swim.title">
+  <br>
+  <label for="description">Description</label>
+  <input type="text" id="description" ng-model="swimsEdit.swim.description">
+  <br>
+  <label for="venue">Venue</label>
+  <select ng-model="swimsEdit.swim.venue_id" ng-options="venue.id as venue.name for venue in swimsEdit.venues"></select>
+  <br>
+  <input type="submit">
+</form> -->
+
+
+
+
+
+
+
+<form ng-submit="swimsEdit.update()">
+  <div class="form-group-new">
+    <input class="form-control" type="text" name="title" ng-model="swimsEdit.swim.title" placeholder="title">
+  </div>
+  <div class="form-group-new">
+    <input class="form-control" type="text" name="description" ng-model="swimsEdit.swim.description" placeholder="description">
+  </div>
+
+  <div class="form-group-new">
+    <input class="form-control" type="text" name="venue" ng-model="swimsEdit.swim.venue_id" ng-options="venue.id as venue.name for venue in swimsEdit.venues" placeholder="venue">
+  </div>
+
+
+
+
+  <input class="btn btn-primary" class="submit" type="submit" value="Submit">
+</form>

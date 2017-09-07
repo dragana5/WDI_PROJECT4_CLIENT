@@ -1,9 +1,17 @@
-<h1>show swim</h1>
 <h1>Swim</h1>
 
 <h2>{{ swimsShow.swim.title }}</h2>
-<h4>{{ swimsShow.swim.description }}</h4>
+<h4>{{ swimsShow.swim.description}}</h4>
+
+<h4>Created by : {{swim.creator.username}}</h4>
+
+<ul ng-repeat="user in swim.users">
+  <li>People attending this swim are: {{ user.username }}</li>
+</ul>
 
 <!-- show delete and edit button only if the event creator is the person who is logged in -->
-<button ng-click="swimsShow.editSwim" type="button" name="button">Edit this session</button>
-<button ng-click="swimsShow.deleteSwim()"type="button" name="button">Delete this session</button>
+
+<button ui-sref="swimsEdit({ id: swimsShow.swim.id})" type="button" name="button">Edit this session</button>
+
+<button ng-click="swimsShow.deleteSwim()" type="button" name="button">Delete this session
+</button>
